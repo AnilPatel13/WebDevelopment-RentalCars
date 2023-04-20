@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - WhyGo</title>
+    <link rel="icon" href="{{ url_for('static',filename='images/asu_icon.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+</head>
+<body>
+
+<div id="container">
+    <!-- Cover Box -->
+    <div id="cover">
+        <!-- Sign Up Section -->
+        <h1 class="sign-up">Lets Go with <a href="#" class="logo">WHY<span>GO</span></a></h1>
+        <p class="sign-up">Enter your personal details<br> and start a journey with us</p>
+        <a class="button sign-up" href="{{ url_for('registration') }}">Sign Up</a>
+        </br>
+        <p></p>
+        <a class="sign-up" href="{{ url_for('forget_password') }}">Forgot your password?</a>
+<!--        <a id="forgot-pass" href="{{ url_for('forget_password') }}">Forgot your password?</a><br>-->
+    </div>
+    <!-- Login Box -->
+    <div id="login">
+        <h1>Sign In</h1>
+        <!--        <a href="#"><img class="social-login"-->
+        <!--                         src="{{ url_for('static',filename='images/instagram.svg') }}"></a>-->
+        <!--        <a href="#"><img class="social-login" src="{{ url_for('static',filename='images/square-facebook.svg') }}"></a>-->
+        <a href="google/"><img class="social-login" src="{{ url_for('static',filename='images/google.svg') }}"
+                               style="width:35px;height:35px;"></a>
+        <!--        <i class="fa-brands fa-google" style='font-size:36px'></i>-->
+        <p style='font-size:15px'>or use your Google Email account:</p>
+        <form action="/login" method="post">
+            <input required="true" type="email" id="loginemailid" name="loginemailid" placeholder="Email" autocomplete="off"><br>
+            <input required="true" type="password" id="logininputPassword" name="logininputPassword" placeholder="Password" autocomplete="off"><br>
+<!--            <p></p>-->
+            <input class="submit-btn" type="submit" value="Sign In">
+            <p></p>
+            <div class="form-floating mb-3">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}" style="text-align:center" role="alert">
+                    <strong>{{ message }}</strong>
+                    <span class="closebtnalert" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+
+        </form>
+    </div>
+</div> <!-- END Container -->
+
+</body>
+</html>

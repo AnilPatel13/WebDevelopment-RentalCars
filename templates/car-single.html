@@ -1,0 +1,614 @@
+{% extends "base.html" %}
+{% block title %}Cars{% endblock %}
+{% block pagecontent %}
+
+<section class="hero-wrap hero-wrap-2 js-fullheight"
+         style="background-image: url('https://d1km0526oogwq5.cloudfront.net/images/bg_3.jpg');"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>Car details <i
+                        class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-3 bread">Car Details</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section ftco-car-details">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="car-details">
+                    <div class="img rounded"
+                         style="background-image: url('{{ data[0].vehicle_image_url }}');"></div>
+                    <div class="text text-center">
+                        <span class="subheading">{{ data[0].vehicle_company_name }}</span>
+                        <h2>{{ data[0].vehicle_description }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services">
+                    <div class="media-body py-md-4">
+                        <div class="d-flex mb-3 align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="flaticon-dashboard"></span></div>
+                            <div class="text">
+                                <h3 class="heading mb-0 pl-3">
+                                    Mileage
+                                    <span>{{ data[0].vehile_mileage }}</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services">
+                    <div class="media-body py-md-4">
+                        <div class="d-flex mb-3 align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="flaticon-pistons"></span></div>
+                            <div class="text">
+                                <h3 class="heading mb-0 pl-3">
+                                    Transmission
+                                    <span>{{ data[0].vehile_transmission }}</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services">
+                    <div class="media-body py-md-4">
+                        <div class="d-flex mb-3 align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="flaticon-car-seat"></span></div>
+                            <div class="text">
+                                <h3 class="heading mb-0 pl-3">
+                                    Seats
+                                    <span>{{ data[0].max_number_of_seats }} Adults</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services">
+                    <div class="media-body py-md-4">
+                        <div class="d-flex mb-3 align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="flaticon-backpack"></span></div>
+                            <div class="text">
+                                <h3 class="heading mb-0 pl-3">
+                                    Luggage
+                                    <span>{{ data[0].vehicle_luggage_capacity }} Bags</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 services">
+                    <div class="media-body py-md-4">
+                        <div class="d-flex mb-3 align-items-center">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="flaticon-diesel"></span></div>
+                            <div class="text">
+                                <h3 class="heading mb-0 pl-3">
+                                    Fuel
+                                    <span>{{ data[0].fuel }}</span>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table">
+            <thead class="thead-primary">
+            <tr class="text-center">
+                <!--                <th>&nbsp;</th>-->
+                <!--                <th>&nbsp;</th>-->
+                <th class="bg-primary heading">Per Hour Rate</th>
+                <th class="bg-dark heading">Per Day Rate</th>
+                <th class="bg-black heading">Leasing</th>
+            </tr>
+            </thead>
+            <tr class="">
+                <td class="price">
+                    <p class="btn-custom"><a href="#">Rent a car</a></p>
+                    <div class="price-rate">
+                        <h3>
+                            <span class="num"><small class="currency">$</small> {{ data[0].per_hour_rent }}</span>
+                            <span class="per">/per hour</span>
+                        </h3>
+                        <span class="subheading">$3/hour fuel surcharges</span>
+                    </div>
+                </td>
+                <td class="price">
+                    <p class="btn-custom"><a href="#">Rent a car</a></p>
+                    <div class="price-rate">
+                        <h3>
+                            <span class="num"><small class="currency">$</small> {{ data[0].per_day_rent }}</span>
+                            <span class="per">/per day</span>
+                        </h3>
+                        <span class="subheading">$3/hour fuel surcharges</span>
+                    </div>
+                </td>
+                <td class="price">
+                    <p class="btn-custom"><a href="#">Rent a car</a></p>
+                    <div class="price-rate">
+                        <h3>
+                            <span class="num"><small class="currency">$</small> {{ data[0].per_month_rent }}</span>
+                            <span class="per">/per month</span>
+                        </h3>
+                        <span class="subheading">$3/hour fuel surcharges</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+        <!--        <div style="text-align:center;">-->
+        <!--            <a href="#" class="btn btn-primary py-2 mr-1">Book now</a>-->
+        <!--        </div>-->
+        <div class="row">
+            <div class="col-md-12 pills">
+                <div class="bd-example bd-example-tabs">
+                    <div class="d-flex justify-content-center">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-description-tab" data-toggle="pill"
+                                   href="#pills-description" role="tab" aria-controls="pills-description"
+                                   aria-expanded="true">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill"
+                                   href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer"
+                                   aria-expanded="true">Description</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review"
+                                   role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
+                             aria-labelledby="pills-description-tab">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <ul class="features">
+                                        {% if data[0].aircondition_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Airconditions</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Airconditions</li>
+                                        {% endif %}
+
+                                        {% if data[0].child_seat_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Child Seat</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Child Seat</li>
+                                        {% endif %}
+
+                                        {% if data[0].gps_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>GPS</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>GPS</li>
+                                        {% endif %}
+
+                                        {% if data[0].vehicle_luggage_capacity > 0 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Luggage</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Luggage</li>
+                                        {% endif %}
+
+                                        {% if data[0].music_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Music</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Music</li>
+                                        {% endif %}
+
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="features">
+                                        {% if data[0].seat_belt_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Seat Belt</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Seat Belt</li>
+                                        {% endif %}
+
+                                        {% if data[0].sleeping_bed_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Sleeping Bed</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Sleeping Bed</li>
+                                        {% endif %}
+
+                                        {% if data[0].water_level_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Water</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Water</li>
+                                        {% endif %}
+
+                                        {% if data[0].bluetooth_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Bluetooth</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Bluetooth</li>
+                                        {% endif %}
+
+                                        {% if data[0].on_board_computer_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Onboard computer</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Onboard computer</li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="features">
+                                        {% if data[0].audio_input_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Audio input</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Audio input</li>
+                                        {% endif %}
+
+                                        {% if data[0].long_term_trip_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Long Term Trips</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Long Term Trips</li>
+                                        {% endif %}
+
+                                        {% if data[0].medical_kit_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Medical Kit</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Medical Kit</li>
+                                        {% endif %}
+
+                                        {% if data[0].remote_cental_locking_flag == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Remote central locking
+                                        </li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Remote central locking
+                                        </li>
+                                        {% endif %}
+
+                                        {% if data[0].climate_control == 1 %}
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Climate control</li>
+                                        {% else %}
+                                        <li class="remove"><span class="ion-ios-close"></span>Climate control</li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
+                             aria-labelledby="pills-manufacturer-tab">
+                            <p> {{ data[0].car_description }}</p>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <h3 class="head">{{ rating_data_percentage[0].total_reviews }} Reviews</h3>
+                                    {% for rating in rating_data %}
+                                    <div class="review d-flex">
+                                        <div class="user-img"
+                                             style="background-image: url({{ url_for('static', filename='images/person_5.png') }})"></div>
+                                        <div class="desc">
+                                            <h4>
+                                                {% if rating.middle_name %}
+                                                <span class="text-left">{{ rating.first_name }} {{ rating.middle_name }} {{ rating.last_name }}</span>
+                                                {% else %}
+                                                <span class="text-left">{{ rating.first_name }} {{ rating.last_name }}</span>
+                                                {% endif %}
+                                                <span class="text-right">{{ rating.creation_datetime }}</span>
+                                            </h4>
+                                            <p class="star">
+									   				<span>
+                                                        {% set stop_loop = false %}
+                                                        {% for counter in range(1, 6) %}
+                                                          {% if rating.vehicle_rating is none %}
+                                                            {% set stop_loop = true %}
+                                                          {% endif %}
+                                                          {% if not stop_loop and counter <= rating.vehicle_rating %}
+                                                            <i class="ion-ios-star"></i>
+                                                          {% else %}
+                                                            <i class="icon ion-ios-star-outline black-star" style="color: gray;"></i>
+                                                          {% endif %}
+                                                        {% endfor %}
+								   					</span>
+                                                <span class="text-right"><a href="#" class="reply"><i
+                                                        class="icon-reply"></i></a></span>
+                                            </p>
+                                            <p>{{ rating.comment }}</p>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="rating-wrap">
+                                        <h3 class="head">Give a Review</h3>
+                                        <div class="wrap">
+                                            <p class="star">
+                                                <span>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="ion-ios-star"></i>
+                                                    {% if rating_data_percentage[0].five_star_percentage is none %}
+                                                    (0%)
+                                                    {% else %}
+                                                    ({{ rating_data_percentage[0].five_star_percentage }}%)
+                                                    {% endif %}
+                                                </span>
+                                                <span>
+                                                    {% if rating_data_percentage[0].five_star_reviews is none %}
+                                                        0 Reviews
+                                                    {% else %}
+                                                        {{ rating_data_percentage[0].five_star_reviews }} Reviews
+                                                    {% endif %}
+                                                </span>
+                                            </p>
+                                            <p class="star">
+                                                <span>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="icon ion-ios-star-outline black-star"
+                                                       style="color: gray;"></i>
+                                                    {% if rating_data_percentage[0].four_star_percentage is none %}
+                                                    (0%)
+                                                    {% else %}
+                                                    ({{ rating_data_percentage[0].four_star_percentage }}%)
+                                                    {% endif %}
+                                                </span>
+                                                <span>
+                                                    {% if rating_data_percentage[0].four_star_reviews is none %}
+                                                        0 Reviews
+                                                    {% else %}
+                                                        {{ rating_data_percentage[0].four_star_reviews }} Reviews
+                                                    {% endif %}
+                                                </span>
+                                            </p>
+                                            <p class="star">
+                                                <span>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="icon ion-ios-star-outline black-star"
+                                                       style="color: gray;"></i>
+                                                    <i class="icon ion-ios-star-outline black-star"
+                                                       style="color: gray;"></i>
+                                                    {% if rating_data_percentage[0].three_star_percentage is none %}
+                                                    (0%)
+                                                    {% else %}
+                                                    ({{ rating_data_percentage[0].three_star_percentage }}%)
+                                                    {% endif %}
+                                                </span>
+                                                <span>
+                                                    {% if rating_data_percentage[0].three_star_reviews is none %}
+                                                        0 Reviews
+                                                    {% else %}
+                                                        {{ rating_data_percentage[0].three_star_reviews }} Reviews
+                                                    {% endif %}
+                                                </span>
+                                            </p>
+                                            <p class="star">
+                                                <span>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="icon ion-ios-star-outline black-star"
+                                                       style="color: gray;"></i>
+                                                    <i class="icon ion-ios-star-outline black-star"
+                                                       style="color: gray;"></i>
+                                                    <i class="icon ion-ios-star-outline black-star"
+                                                       style="color: gray;"></i>
+                                                    {% if rating_data_percentage[0].two_star_percentage is none %}
+                                                    (0%)
+                                                    {% else %}
+                                                    ({{ rating_data_percentage[0].two_star_percentage }}%)
+                                                    {% endif %}
+                                                </span>
+                                                <span>
+                                                    {% if rating_data_percentage[0].two_star_reviews is none %}
+                                                        0 Reviews
+                                                    {% else %}
+                                                        {{ rating_data_percentage[0].two_star_reviews }} Reviews
+                                                    {% endif %}
+                                                </span>
+                                            </p>
+                                            <p class="star">
+                                                <span>
+                                                    <i class="ion-ios-star"></i>
+                                                    <i class="icon ion-ios-star-outline black-star"
+                                                       style="color: gray;"></i>
+                                                    <i class="icon ion-ios-star-outline black-star"
+                                                       style="color: gray;"></i>
+                                                    <i class="icon ion-ios-star-outline black-star"
+                                                       style="color: gray;"></i>
+                                                    <i class="icon ion-ios-star-outline black-star"
+                                                       style="color: gray;"></i>
+                                                    {% if rating_data_percentage[0].one_star_percentage is none %}
+                                                    (0%)
+                                                    {% else %}
+                                                    ({{ rating_data_percentage[0].one_star_percentage }}%)
+                                                    {% endif %}
+                                                </span>
+                                                <span>
+                                                    {% if rating_data_percentage[0].one_star_reviews is none %}
+                                                        0 Reviews
+                                                    {% else %}
+                                                        {{ rating_data_percentage[0].one_star_reviews }} Reviews
+                                                    {% endif %}
+                                                </span>
+                                            </p>
+                                            <form action="/reviews" method="post">
+                                                <input type="hidden" name="car_id" value="{{ car_id }}">
+                                                <div class="form-group">
+                                                    <label for="comment">Comment:</label>
+                                                    <textarea class="form-control" id="comment" name="comment"
+                                                              rows="3"></textarea>
+                                                </div>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="form-group">
+                                                            <label for="comment" style="margin-right: 30px;">Vehicle
+                                                                Ratings:</label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="rate">
+                                                                <input type="radio" id="star5" name="vehicle_rate"
+                                                                       value="5"/>
+                                                                <label for="star5" title="text">5 stars</label>
+                                                                <input type="radio" id="star4" name="vehicle_rate"
+                                                                       value="4"/>
+                                                                <label for="star4" title="text">4 stars</label>
+                                                                <input type="radio" id="star3" name="vehicle_rate"
+                                                                       value="3"/>
+                                                                <label for="star3" title="text">3 stars</label>
+                                                                <input type="radio" id="star2" name="vehicle_rate"
+                                                                       value="2"/>
+                                                                <label for="star2" title="text">2 stars</label>
+                                                                <input type="radio" id="star1" name="vehicle_rate"
+                                                                       value="1"/>
+                                                                <label for="star1" title="text">1 star</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="form-group">
+                                                            <label for="comment">Cleanliness Ratings:</label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="cleanliness">
+                                                                <input type="radio" id="star6" name="cleanliness_rate"
+                                                                       value="5"/>
+                                                                <label for="star6" title="text">5 stars</label>
+                                                                <input type="radio" id="star7" name="cleanliness_rate"
+                                                                       value="4"/>
+                                                                <label for="star7" title="text">4 stars</label>
+                                                                <input type="radio" id="star8" name="cleanliness_rate"
+                                                                       value="3"/>
+                                                                <label for="star8" title="text">3 stars</label>
+                                                                <input type="radio" id="star9" name="cleanliness_rate"
+                                                                       value="2"/>
+                                                                <label for="star9" title="text">2 stars</label>
+                                                                <input type="radio" id="star10" name="cleanliness_rate"
+                                                                       value="1"/>
+                                                                <label for="star10" title="text">1 star</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="form-group">
+                                                            <label for="comment" style="margin-right: 30px;">Comfort
+                                                                Ratings:</label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="comfort">
+                                                                <input type="radio" id="star11" name="comfort_rate"
+                                                                       value="5"/>
+                                                                <label for="star11" title="text">5 stars</label>
+                                                                <input type="radio" id="star12" name="comfort_rate"
+                                                                       value="4"/>
+                                                                <label for="star12" title="text">4 stars</label>
+                                                                <input type="radio" id="star13" name="comfort_rate"
+                                                                       value="3"/>
+                                                                <label for="star13" title="text">3 stars</label>
+                                                                <input type="radio" id="star14" name="comfort_rate"
+                                                                       value="2"/>
+                                                                <label for="star14" title="text">2 stars</label>
+                                                                <input type="radio" id="star15" name="comfort_rate"
+                                                                       value="1"/>
+                                                                <label for="star15" title="text">1 star</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    {% with messages = get_flashed_messages(with_categories=true) %}
+                                                    {% if messages %}
+                                                    {% for category, message in messages %}
+                                                    <div class="alert alert-{{ category }}" style="text-align:center"
+                                                         role="alert">
+                                                        <strong>{{ message }}</strong>
+                                                        <span class="closebtnalert"
+                                                              onclick="this.parentElement.style.display='none';">&times;</span>
+                                                    </div>
+                                                    {% endfor %}
+                                                    {% endif %}
+                                                    {% endwith %}
+                                                </div>
+                                                <div class="button-container-review">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+                <span class="subheading">Choose Car</span>
+                <h2 class="mb-2">Related Cars</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for related_car in related_data %}
+            <div class="col-md-4">
+                <div class="car-wrap rounded ftco-animate">
+                    <div class="img rounded d-flex align-items-end"
+                         style="background-image: url('{{ related_car.vehicle_image_url }}');">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a href="{{ url_for('carSingle') }}">{{ related_car.vehicle_description }}</a>
+                        </h2>
+                        <div class="d-flex mb-3">
+                            <span class="cat">{{ related_car.vehicle_company_name }}</span>
+                            <p class="price ml-auto">${{ related_car.per_day_rent }} <span>/day</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a>
+                            <a href="{{ url_for('carSingle', car_id=related_car.vehicle_id) }}"
+                               class="btn btn-secondary py-2 ml-1">Details</a>
+                            <!--                            <a href="{{ url_for('carSingle') }}" class="btn btn-secondary py-2 ml-1">Details</a></p>-->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

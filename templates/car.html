@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Cars{% endblock %}
+
+{% block pagecontent %}
+
+<section class="hero-wrap hero-wrap-2 js-fullheight"
+         style="background-image: url('https://d1km0526oogwq5.cloudfront.net/images/bg_8.webp');"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>Cars <i
+                        class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-3 bread">Choose Your Car</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+            {% for car in data %}
+            <div class="col-md-4">
+                <div class="car-wrap rounded ftco-animate">
+                    <div class="img rounded d-flex align-items-end"
+                         style="background-image: url('{{ car.vehicle_image_url }}');">
+                    </div>
+                    <div class="text">
+                        <h2 class="mb-0"><a href="{{ url_for('carSingle') }}">{{ car.vehicle_description }}</a></h2>
+                        <div class="d-flex mb-3">
+                            <span class="cat">{{ car.vehicle_company_name }}</span>
+                            <p class="price ml-auto">${{ car.per_day_rent }} <span>/day</span></p>
+                        </div>
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a>
+                            <a href="{{ url_for('carSingle', car_id=car.vehicle_id) }}" class="btn btn-secondary py-2 ml-1">Details</a>
+<!--                            <a href="{{ url_for('carSingle') }}" class="btn btn-secondary py-2 ml-1">Details</a></p>-->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        {% if current_page > 1 %}
+                        <li><a href="{{ url_for('car', page=1) }}">&lt;&lt;</a></li>
+                        <li><a href="{{ url_for('car', page=current_page-1) }}">&lt;</a></li>
+                        {% endif %}
+                        {% for p in page_range %}
+                        {% if p == current_page %}
+                        <li class="active"><span>{{ p }}</span></li>
+                        {% else %}
+                        <li><a href="{{ url_for('car', page=p) }}">{{ p }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                        {% if current_page < page_range[-1] %}
+                        <li><a href="{{ url_for('car', page=current_page+1) }}">&gt;</a></li>
+                        <li><a href="{{ url_for('car', page=page_range[-1]) }}">&gt;&gt;</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

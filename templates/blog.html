@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}Blog{% endblock %}
+
+{% block pagecontent %}
+<section class="hero-wrap hero-wrap-2 js-fullheight"
+         style="background-image: url('https://d1km0526oogwq5.cloudfront.net/images/bg_6.webp');"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>About us <i
+                        class="ion-ios-arrow-forward"></i></span></p>
+                <h1 class="mb-3 bread">Our Blog</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry">
+                    <a href="{{ url_for('blogSingle') }}" class="block-20 img"
+                       style="background-image: url('https://d1km0526oogwq5.cloudfront.net/images/image_6.jpg');">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Mar. 17, 2023</a></div>
+                            <div><a href="#">Admin</a></div>
+                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Unlock a World of Convenience: Enjoy a Fixed Rate with Our Rental Car Subscription!</a></h3>
+                        <p>Our fixed rate rental car subscription offers a convenient and affordable way to enjoy a reliable vehicle without the hassle of traditional car ownership.</p>
+                        <p><a href="{{ url_for('blogSingle') }}" class="btn btn-primary">Continue <span
+                                class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry justify-content-end mb-md-5">
+                    <a href="{{ url_for('blogSingle') }}" class="block-20 img"
+                       style="background-image: url('https://d1km0526oogwq5.cloudfront.net/images/image_5.jpg');">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Mar. 17, 2023</a></div>
+                            <div><a href="#">Admin</a></div>
+                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Embark on a Wild Adventure: Exploring the Wildlife with Our Safari Tourist Car!</a></h3>
+                        <p>Our safari tourist car is the perfect way to explore the rugged terrain and wildlife of the great outdoors. Experience the ultimate adventure with comfort and safety.</p>
+                        <p><a href="{{ url_for('blogSingle') }}" class="btn btn-primary">Continue <span
+                                class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry justify-content-end mb-md-5">
+                    <a href="{{ url_for('blogSingle') }}" class="block-20 img"
+                       style="background-image: url('https://d1km0526oogwq5.cloudfront.net/images/image_1.jpg');">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Mar. 17, 2023</a></div>
+                            <div><a href="#">Admin</a></div>
+                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Exploring the Wonders of the Grand Canyon: Your Ultimate Rental Car Adventure!</a></h3>
+                        <p>Embark on an unforgettable adventure through the breathtaking Grand Canyon with our rental cars. Explore the natural beauty and awe-inspiring vistas at your own pace.</p>
+                        <p><a href="{{ url_for('blogSingle') }}" class="btn btn-primary">Continue <span
+                                class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry justify-content-end mb-md-5">
+                    <a href="{{ url_for('blogSingle') }}" class="block-20 img"
+                       style="background-image: url('https://d1km0526oogwq5.cloudfront.net/images/image_2.jpg');">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Mar. 17, 2023</a></div>
+                            <div><a href="#">Admin</a></div>
+                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Pedal Your Way to Adventure: Discovering New Horizons with Our Rental Bikes!</a></h3>
+                        <p>Get ready to hit the road and explore new horizons with our rental bikes! Discover the beauty of your surroundings and enjoy the freedom of two wheels.</p>
+                        <p><a href="{{ url_for('blogSingle') }}" class="btn btn-primary">Continue <span
+                                class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center d-flex ftco-animate">
+                <div class="blog-entry">
+                    <a href="{{ url_for('blogSingle') }}" class="block-20 img"
+                       style="background-image: url('https://d1km0526oogwq5.cloudfront.net/images/image_3.jpg');">
+                    </a>
+                    <div class="text px-md-5 pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">Mar. 17, 2023</a></div>
+                            <div><a href="#">Admin</a></div>
+                            <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#">Experience the Ultimate Adrenaline Rush: Trying Out Our New Fleet of Rental Sports Cars!</a></h3>
+                        <p>Experience the thrill of the open road with our rental sports cars. Feel the power and speed as you cruise through scenic routes and stunning landscapes, leaving your worries behind.</p>
+                        <p><a href="{{ url_for('blogSingle') }}" class="btn btn-primary">Continue <span
+                                class="icon-long-arrow-right"></span></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col text-center">
+                <div class="block-27">
+                    <ul>
+                        <li><a href="#">&lt;</a></li>
+                        <li class="active"><span>1</span></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&gt;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
