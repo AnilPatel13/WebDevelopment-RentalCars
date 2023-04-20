@@ -24,57 +24,57 @@ Rental cars come in a variety of sizes and models to fit different needs. Econom
 
 ### Login Page Images
 
-![plot](./images/Picture1.png)
+![plot](./images/picture1.png)
 
-![plot](./images/Picture2.png)
+![plot](./images/picture2.png)
 
-![plot](./images/Picture3.png)
+![plot](./images/picture3.png)
 
-![plot](./images/Picture4.png)
+![plot](./images/picture4.png)
 
 
 #### Web Pages Images
 
-![plot](./images/image1)
+![plot](./images/image1.png)
 
-![plot](./images/image2)
+![plot](./images/image2.png)
 
-![plot](./images/image3)
+![plot](./images/image3.png)
 
-![plot](./images/image4)
+![plot](./images/image4.png)
 
-![plot](./images/image5)
+![plot](./images/image5.png)
 
-![plot](./images/image6)
+![plot](./images/image6.png)
 
-![plot](./images/image7)
+![plot](./images/image7.png)
 
-![plot](./images/image8)
+![plot](./images/image8.png)
 
-![plot](./images/image9)
+![plot](./images/image9.png)
 
-![plot](./images/image10)
+![plot](./images/image10.png)
 
-![plot](./images/image11)
+![plot](./images/image11.png)
 
-![plot](./images/image12)
+![plot](./images/image12.png)
 
-![plot](./images/image13)
+![plot](./images/image13.png)
 
-![plot](./images/image14)
+![plot](./images/image14.png)
 
-![plot](./images/image15)
+![plot](./images/image15.png)
 
-![plot](./images/image16)
+![plot](./images/image16.png)
 
-![plot](./images/image17)
+![plot](./images/image17.png)
 
-![plot](./images/image18)
+![plot](./images/image18.png)
 
-![plot](./images/image19)
+![plot](./images/image19.png)
 
-![plot](./images/image20)
+![plot](./images/image20.png)
 
-![plot](./images/image21)
+![plot](./images/image21.png)
 
-![plot](./images/image22)
+![plot](./images/image22.png)
